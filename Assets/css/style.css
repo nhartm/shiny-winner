@@ -1,0 +1,94 @@
+/* Set box sizing for all boxes */
+*, *::before, * ::after{
+ box-sizing: border-box;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+/* Remove padding and margin, move quiz to middle of screen apply neutral color */
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    background-color:darkslategray;
+}
+
+/* When user answers correctly, display green color */
+body.correct{
+    background-color:mediumseagreen;
+}
+
+/* When user answers incorrectly, display red color */
+body.wrong{
+    background-color: tomato;
+}
+
+/* Set pass fail card*/
+section{
+    width: 200px auto;
+    border: 1px solid;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 50px;
+    box-shadow: 0 0 10px 2px ;
+}
+/* Make container a card and add border and shaddow */
+.container{
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+/* Wire frame buttons and add colors */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+.btn {
+    border:(1px solid 100%, 30%);
+    background-color:cadetblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+.btn:hover {
+    border-color: black;
+
+}
+
+.btn.correct {
+    background-color: mediumseagreen;
+    color:black;
+}
+
+.btn.wrong {
+    background-color: tomato;
+}
+
+.start-button, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
