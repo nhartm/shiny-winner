@@ -141,4 +141,55 @@ function selectAnswer(e) {
         fail.innerHTML = failCounter;
         localStorage.setItem("failCount", failCounter);
     }
+    function getPasses(){
+        var storedPasses = localStorage.getItem("passCount");
+        if (answers=== true){
+            passGame();
+        }
+    }
+    function getFails(){
+        var storedFails = localStorage.getItem("failCount");
+       if (answers === false){
+        failGame();
+       }
+    }
+    // Array of questions and multiple choice answers
+    const questions = [
+        {
+            question: 'What are the main characters from Adventure Time?',
+            answers: [
+                {text:'Finn and Jake', correct: true},
+                {text:'BMO and Gunter', correct: false},
+                {text:'Lemongrab and Huntress Wizard', correct: false},
+                {text:'LSP and Marceline', correct: false}
+            ]
+        },
+        {
+           question: "Who is Spongebob's best friend?",
+           answers: [
+               {text:'Patrick Star', correct: true},
+                {text:'Plankton', correct: false},
+                {text:'Mr. Krabs', correct: false},
+                {text:'Squillium Fancyson', correct: false}
+            ]
+       },
+       {
+        question: 'What channel is Steven Universe on?',
+        answers: [
+            {text:'Nickelodeon', correct: false},
+            {text:'Disney XD', correct: false},
+            {text:'Cartoon Network', correct: true},
+            {text:'Adult Swim', correct: false}
+        ]
+       },
+       {
+        question: 'Where do the main characters in Adventure Time live?',
+        answers: [
+            {text:'In the Ice Kingdom', correct: false},
+            {text:'In a cave', correct: false},
+            {text:'In a spaceship', correct: false},
+            {text:'In a treehouse', correct: true}
+            ]
+        }
+    ]
     
