@@ -40,3 +40,17 @@ questionContainerElement.classList.remove('hide')
 setNextQuestion()
 startTimer()
 }
+// This function is called when answers are correct within timeframe
+function passGame() {
+    notify.textContent = "YOU PASSED!!"
+    passCounter++
+    setPasses()
+    }
+    
+ // This function is called when the answers are false and timer runs out
+function failGame() {
+     notify.innerHTML = "you failed..."
+    failCounter++
+    setFails()
+    }
+    
