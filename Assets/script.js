@@ -53,4 +53,49 @@ function failGame() {
     failCounter++
     setFails()
     }
-    
+
+// The startTimer function starts and stops the timer and triggers passGame() and failGame()
+function startTimer() {
+    timer = setInterval(function() {
+        timerCount--;
+        timerElement.innerHTML = timerCount;
+        if (timerCount >= 0) {
+            if (isPass && timerCount > 0){
+                clearInterval(timer);
+                passGame();
+            }
+        }
+        if (timerCount === 0) {
+            clearInterval(timer);
+            failGame();
+        }
+    }, 1000);
+}
+function setNextQuestion() {
+    resetGame()
+showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+
+function showQuestion(question){ 
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button) 
+    })
+}
+
+function resetGame() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild
+        (answerButtonsElement.firstChild)
+        }
+       
+} 
