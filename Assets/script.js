@@ -99,3 +99,46 @@ function resetGame() {
         }
        
 } 
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+        } 
+    }
+    
+    // Adds colored background depending on user's answer
+    function setStatusClass (element, correct) {
+        clearStatusClass(element)
+        if (correct) {
+            element.classList.add('correct')
+        } else {
+            element.classList.add('wrong')
+        }
+    }
+    
+    // Resets wrong or correct color on the screen
+    function clearStatusClass(element){
+        element.classList.remove('correct');
+        element.classList.remove('wrong');
+    }
+    
+    // Adds pass count to screen and stores in client storage
+    function setPasses() {
+        pass.innerHTML = passCounter;
+        localStorage.setItem("passCount", passCounter);
+    }
+    
+    // Adds fail count to screen and stores in client storage
+    function setFails() {
+        fail.innerHTML = failCounter;
+        localStorage.setItem("failCount", failCounter);
+    }
+    
