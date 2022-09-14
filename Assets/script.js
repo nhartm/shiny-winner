@@ -3,6 +3,18 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = 
+document.getElementById('answer-buttons');
+var notify = document.getElementById(".notify");
+var timerElement = document.getElementById(".timer-count");
+var pass = document.querySelector(".pass");
+var fail = document.querySelector(".fail");
+var isPass = false;
+var passCounter = 0;
+var failCounter = 0;
+var timer;
+var timerCount;
+
+let shuffledQuestions, currentQuestionIndex
 
 // Init function is called when page loads
 function init() {
