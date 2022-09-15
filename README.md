@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# shiny-winnergit
-#Cartoon Trivia Quiz
-
-=======
 # shiny-winner: Cartoon Test
 # About This Project:
 This test will determine if your correctly remember cartoons or not. This is a pass/fail test, if you do not answer all the questions within the 30 second time frame or answer all questions correctly, you will fail. 
@@ -12,4 +7,4 @@ This test will determine if your correctly remember cartoons or not. This is a p
 
 # To View this Project:
 Follow this link in your browser: https://nhartm.github.io/shiny-winner/
->>>>>>> d94458d913f83581cb2b33d79f1d100d8f0a2b5f
+
